@@ -36,18 +36,18 @@
 
 Примеры запуска:
 
-`rnc.exe /d:st /f:D:\cpp_projects\prng\prng\10martTests\prngTest5p.txt /p1:7 /p2:12`
+`rnc.exe /d:st /f:prngTest5p.txt /p1:7 /p2:12`
 
-`rnc.exe /d:tr /f:D:\cpp_projects\prng\prng\10martTests\prngTestAdd.txt /p1:1 /p2:1000`
+`rnc.exe /d:tr /f:prngTestAdd.txt /p1:1 /p2:1000`
 
-`rnc.exe /d:ex /f:D:\cpp_projects\prng\prng\10martTests\prngTest5p.txt /p1:7 /p2:12`
+`rnc.exe /d:ex /f:D:prngTest5p.txt /p1:7 /p2:12`
 
-`rnc.exe /d:nr /f:D:\cpp_projects\prng\prng\10martTests\prngTestAdd.txt /p1:1 /p2:1000`
+`rnc.exe /d:nr /f:D:prngTestAdd.txt /p1:1 /p2:1000`
 
-`rnc.exe /d:gm /f:D:\cpp_projects\prng\prng\10martTests\prngTest5p.txt /p1:7 /p2:12`
+`rnc.exe /d:gm /f:D:prngTest5p.txt /p1:7 /p2:12`
 
-`rnc.exe /d:ln /f:D:\cpp_projects\prng\prng\10martTests\prngTestRsaDefault.txt /p1:2 /p2:1,1`
+`rnc.exe /d:ln /f:D:prngTestRsaDefault.txt /p1:2 /p2:1,1`
 
-`rnc.exe /d:ls /f:D:\cpp_projects\prng\prng\10martTests\prngTestNfsr.txt /p1:7 /p2:16`
+`rnc.exe /d:ls /f:D:prngTestNfsr.txt /p1:7 /p2:16`
 
-`rnc.exe /d:bi /f:D:\cpp_projects\prng\prng\10martTests\prngTestAdd.txt /p1:10 /p2:0,5`
+`rnc.exe /d:bi /f:D:prngTestAdd.txt /p1:10 /p2:0,5`
