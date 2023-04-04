@@ -455,6 +455,6 @@ int main(int argc, char* argv[])
     cout << "Parameter 1: " << parameter1 << endl;
     cout << "Parameter 2: " << parameter2 << endl;
     cout << "Input File: " << inputFileName << endl;
-    cout << "Input File: " << outputFileName << endl;
+    cout << "Output File: " << outputFileName << endl;
     return 0;
 }
