@@ -20,13 +20,13 @@ string findInStr(string const& str, int n) {
 }
 
 void helpFunc() {
-    cout << "Введена команда c /h. Допустимые параметры:";
-    cout << "\n\n/d:<распределение> - код распределения для преобразования последовательности. Возможные коды распределений:\n";
-    cout << "\n  st – стандартное равномерное с заданным интервалом (Параметры: a, b);\n  tr – треугольное распределение (Параметры: a, b);\n  ex – общее экспоненциальное распределение (Параметры: a, b);\n  nr – нормальное распределение (Параметры: mu, sigma);\n  gm – гамма распределение (Параметры: a, b);\n  ln – логнормальное распределение (Параметры: a, b);\n  ls – логистическое распределение (Параметры: a, b);\n  bi – биномиальное распределение. (Параметры: n, p)\n";
-    cout << "\n\n/f:<имя_файла> - имя файла с входной последовательностью";
-    cout << "\n\n/p1:<параметр1> - 1-й параметр, необходимый, для генерации ПСЧ заданного распределения.";
-    cout << "\n\n/p2:<параметр2> - 2-й параметр, необходимый, для генерации ПСЧ заданного распределения.";
-    cout << "\n\n/h – информация о допустимых параметрах командной строки программы.\n";
+    cout << "The command with /h is introduced. Permissible parameters:";
+    cout << "\n\n/d:<distribution> - distribution code for sequence conversion. Possible distribution codes:\n";
+    cout << "\n st - standard uniform distribution with a specified interval (Parameters: a, b);\n tr - triangular distribution (Parameters: a, b);\n ex - general exponential distribution (Parameters: a, b);\n nr - normal distribution (Parameters: mu, sigma);\n gm - gamma distribution (Parameters: a, b);\n ln - lognormal distribution (Parameters: a, b);\n ls - logistic distribution (Parameters: a, b);\n bi - binomial distribution. (Parameters: n, p)\n";
+    cout << "\n\n/f:<file_name> - file name of the input sequence";
+    cout << "\n\n/p1:<parameter1> is the 1st parameter needed to generate the RNG of a given distribution.";
+    cout << "\n\n/p2:<parameter2> is the 2nd parameter needed to generate the RNG of a given distribution.";
+    cout << "\n\n/h - information about the allowed command line parameters of the program.\n";
 }
 
 vector <double> XtoU(vector <double> allElems) {
@@ -50,7 +50,7 @@ vector <double> stFunc(string distributionMethod, string inputFileName, string p
     string lineFile;
     vector <double> allElems;
     if (!inFile.is_open()) {
-        cout << "Ошибка открытия файла " << inputFileName << endl;
+        cout << "File opening error " << inputFileName << endl;
         errorMessage = true;
         return allElems;
     }
@@ -79,7 +79,7 @@ vector <double> trFunc(string distributionMethod, string inputFileName, string p
     string lineFile;
     vector <double> allElems;
     if (!inFile.is_open()) {
-        cout << "Ошибка открытия файла " << inputFileName << endl;
+        cout << "File opening error " << inputFileName << endl;
         errorMessage = true;
         return allElems;
     }
@@ -108,7 +108,7 @@ vector <double> exFunc(string distributionMethod, string inputFileName, string p
     string lineFile;
     vector <double> allElems;
     if (!inFile.is_open()) {
-        cout << "Ошибка открытия файла " << inputFileName << endl;
+        cout << "File opening error " << inputFileName << endl;
         errorMessage = true;
         return allElems;
     }
@@ -127,7 +127,7 @@ vector <double> exFunc(string distributionMethod, string inputFileName, string p
     for (int i = 0; i < allU.size() - 1; i++)
     {
         if (allU[i] == 0) {
-            cout << "Одно из случайных чисел U = 0. Ошибка в вычислении ln(U)" << endl;
+            cout << "One of the random numbers U = 0. Error in the calculation of ln(U)" << endl;
             errorMessage = true;
             return allU;
         }
@@ -142,7 +142,7 @@ vector <double> nrFunc(string distributionMethod, string inputFileName, string p
     string lineFile;
     vector <double> allElems;
     if (!inFile.is_open()) {
-        cout << "Ошибка открытия файла " << inputFileName << endl;
+        cout << "File opening error " << inputFileName << endl;
         errorMessage = true;
         return allElems;
     }
@@ -164,7 +164,7 @@ vector <double> nrFunc(string distributionMethod, string inputFileName, string p
     for (int i = 0; i < allU.size(); i+=2)
     {
         if (allU[i] == 1) {
-            cout << "Одно из случайных чисел U = 1. Ошибка в вычислении ln(1 - U)" << endl;
+            cout << "One of the random numbers U = 1. Error in the calculation of ln(1 - U)" << endl;
             errorMessage = true;
             return allU;
         }
@@ -182,7 +182,7 @@ vector <double> gmFunc(string distributionMethod, string inputFileName, string p
     string lineFile;
     vector <double> allElems;
     if (!inFile.is_open()) {
-        cout << "Ошибка открытия файла " << inputFileName << endl;
+        cout << "File opening error " << inputFileName << endl;
         errorMessage = true;
         return allElems;
     }
@@ -201,7 +201,7 @@ vector <double> gmFunc(string distributionMethod, string inputFileName, string p
     for (int i = 0; i < allU.size(); i++)
     {
         if (allU[i] == 1) {
-            cout << "Одно из случайных чисел U = 1. Ошибка в вычислении ln(1 - U)" << endl;
+            cout << "One of the random numbers U = 1. Error in the calculation of ln(1 - U)" << endl;
             errorMessage = true;
             return allU;
         }
@@ -216,7 +216,7 @@ vector <double> lnFunc(string distributionMethod, string inputFileName, string p
     string lineFile;
     vector <double> allElems;
     if (!inFile.is_open()) {
-        cout << "Ошибка открытия файла " << inputFileName << endl;
+        cout << "File opening error " << inputFileName << endl;
         errorMessage = true;
         return allElems;
     }
@@ -238,7 +238,7 @@ vector <double> lnFunc(string distributionMethod, string inputFileName, string p
     for (int i = 0; i < allU.size(); i += 2)
     {
         if (allU[i] == 1) {
-            cout << "Одно из случайных чисел U = 1. Ошибка в вычислении ln(1 - U)" << endl;
+            cout << "One of the random numbers U = 1. Error in the calculation of ln(1 - U)" << endl;
             errorMessage = true;
             return allU;
         }
@@ -248,13 +248,13 @@ vector <double> lnFunc(string distributionMethod, string inputFileName, string p
         double Z2 = a + (b * sqrt(-2 * log(1 - U1)) * sin(2 * M_PI * U2));
         double bminZ1 = b - Z1;
         if (bminZ1 > 43) {
-            cout << "Разность b - Z1 больше 43. Выход за границы double в вычислении exp(b - Z1)" << endl;
+            cout << "The difference of b - Z1 is greater than 43. Overstepping the bounds of the double in the calculation of exp(b - Z1)" << endl;
             errorMessage = true;
             return allU;
         }
         double bminZ2 = b - Z2;
         if (bminZ1 > 43) {
-            cout << "Разность b - Z2 больше 43. Выход за границы double в вычислении exp(b - Z2)" << endl;
+            cout << "The difference of b - Z2 is greater than 43. Overstepping the bounds of the double in the calculation of exp(b - Z2)" << endl;
             errorMessage = true;
             return allU;
         }
@@ -270,7 +270,7 @@ vector <double> lsFunc(string distributionMethod, string inputFileName, string p
     string lineFile;
     vector <double> allElems;
     if (!inFile.is_open()) {
-        cout << "Ошибка открытия файла " << inputFileName << endl;
+        cout << "File opening error " << inputFileName << endl;
         errorMessage = true;
         return allElems;
     }
@@ -289,12 +289,12 @@ vector <double> lsFunc(string distributionMethod, string inputFileName, string p
     for (int i = 0; i < allU.size(); i += 2)
     {
         if (allU[i] == 1) {
-            cout << "Одно из случайных чисел U = 1. Ошибка в вычислении U/(1 - U). Деление на 0." << endl;
+            cout << "One of the random numbers U = 1. An error in the calculation of U/(1 - U). Division by 0." << endl;
             errorMessage = true;
             return allU;
         }
         else if (allU[i] == 0) {
-            cout << "Одно из случайных чисел U = 0. Ошибка в вычислении ln(U/(1 - U))" << endl;
+            cout << "One of the random numbers U = 0. Error in the calculation of ln(U/(1 - U))" << endl;
             errorMessage = true;
             return allU;
         }
@@ -335,7 +335,7 @@ vector <double> biFunc(string distributionMethod, string inputFileName, string p
     string lineFile;
     vector <double> allElems;
     if (!inFile.is_open()) {
-        cout << "Ошибка открытия файла " << inputFileName << endl;
+        cout << "File opening error " << inputFileName << endl;
         errorMessage = true;
         return allElems;
     }
@@ -352,7 +352,7 @@ vector <double> biFunc(string distributionMethod, string inputFileName, string p
     double n = stod(parameter1); //n
     double p = stod(parameter2); //p
     if (p > 1 || p < 0) {
-        cout << "Ошибка. Параметр p2 не может быть > 1 или < 0, т.к. это вероятность." << endl;
+        cout << "Error. The parameter p2 cannot be > 1 or < 0, because it is a probability." << endl;
         errorMessage = true;
         return allElems;
     }
@@ -364,7 +364,7 @@ vector <double> biFunc(string distributionMethod, string inputFileName, string p
             if (allU[i] > funcBiF(y, n, p)) {
                 y++;
                 if (j == n) {
-                    cout << "Ошибка. Не нашлось такого y = (0,...,n), при котором U <= F(y)" << endl;
+                    cout << "Error. There is no y = (0,...,n) such that U <= F(y)" << endl;
                     errorMessage = true;
                     return allElems;
                 }
@@ -403,8 +403,8 @@ vector <double> setMethod(string distributionMethod, string inputFileName, strin
 int main(int argc, char* argv[])
 {
     /*
-            Программа для преобразования последовательности ПСЧ 
-            в другую последовательность ПСЧ с заданным распределением.
+            A program for converting an RNG sequence into 
+            another RNG sequence with a specified distribution.
     */
     setlocale(LC_ALL, "Rus");
     string distributionMethod;
